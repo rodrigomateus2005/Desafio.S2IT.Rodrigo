@@ -1,0 +1,53 @@
+﻿
+@model Desafio.S2IT.Web.Models.HomeModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<h4 class="header">Jogos Disponiveis</h4>
+<div class="row">
+    @foreach (var jogo in Model.JogosDisponiveis)
+    {
+        <div class="col s12 m3">
+            <div class="card gradient-shadow gradient-45deg-light-blue-cyan border-radius-3">
+                <div class="card-content center">
+                    <img src="~/images/game-material-design.png" class="width-40 border-round z-depth-5">
+                    <h5 class="white-text lighten-4">@jogo.Nome</h5>
+                </div>
+            </div>
+        </div>
+
+    }
+</div>
+
+<div class="divider"></div>
+
+<h4 class="header">Jogos Emprestados</h4>
+<div class="row">
+
+    @foreach (var jogo in Model.JogosEmprestados)
+    {
+        <form asp-action="Devolver" asp-controller="Home">
+            <input type="hidden" value="@jogo.Id" name="Id" />
+
+            <div class="col s12 m3">
+                <div class="card gradient-shadow gradient-45deg-red-pink border-radius-3">
+                    <div class="card-content center">
+                        <img src="~/images/game-material-design.png" class="width-40 border-round z-depth-5">
+                        <h5 class="white-text lighten-4">@jogo.Nome</h5>
+
+                        <p class="white-text lighten-4">Emprestado para @jogo.EmprestadoPara</p>
+                        <br />
+                        <p class="white-text lighten-4">Há @jogo.Dias</p>
+
+
+
+                    </div>
+                </div>
+                <button class="btn btn-mini cyan waves-effect waves-light right" type="submit" value="">
+                    Devolver
+                </button>
+            </div>
+        </form>
+    }
+</div>

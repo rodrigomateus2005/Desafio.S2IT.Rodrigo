@@ -1,0 +1,93 @@
+﻿
+@model Desafio.S2IT.Web.Models.CadastroAmigoModel
+@{
+    ViewData["Title"] = "Cadastro de Amigo";
+}
+<div class="row">
+    <div class="card-panel">
+        <h4 class="header2">
+            <b>Cadastro</b>
+
+            @if (Model == null || Model.Id <= 0)
+            {
+                <span>Novo</span>
+            }
+            else
+            {
+                @Model.Id
+            }
+
+        </h4>
+        <div class="row">
+            <form class="col s12" asp-action="Salvar" asp-controller="CadastroAmigo">
+                <input asp-for="Id" type="hidden">
+
+                <div class="row">
+                    <div class="input-field col s12 l6">
+                        <input asp-for="Nome" type="text">
+                        <label asp-for="Nome">Nome</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <button class="btn cyan waves-effect waves-light right" type="submit" name="action" id="Gravar">
+                                Gravar
+                                <i class="material-icons right">send</i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="row">
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th>ID</th>
+                        <th>Nome</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var entidade in Model.Entidades)
+                    {
+                        <tr>
+                            <td width="100">
+                                <form class="col s12" asp-action="Index" asp-controller="CadastroAmigo" method="get">
+                                    <input type="hidden" value="@entidade.Id" name="Id" />
+                                    <button class="btn btn-mini cyan waves-effect waves-light right" type="submit">
+                                        <i class="material-icons">done</i>
+                                    </button>
+                                </form>
+                            </td>
+                            <td width="100">
+                                <form class="col s12" asp-action="Deletar" asp-controller="CadastroAmigo">
+                                    <button class="btn btn-mini cyan waves-effect waves-light right" type="submit">
+                                        <i class="material-icons">delete_forever</i>
+                                    </button>
+                                </form>
+                            </td>
+                            <td>@entidade.Id</td>
+                            <td>@entidade.Nome</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts{
+    <script>
+        $("#Gravar").click(function (event) {
+            if ($("#Nome").val() == "") {
+                Materialize.toast('Informe o nome!', 4000);
+                event.preventDefault();
+                return;
+            }
+        })
+    </script>
+}

@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <title>@ViewData["Title"] - Desafio S2 IT</title>
+
+    <link href="~/lib/materialize/css/materialize.min.css" type="text/css" rel="stylesheet">
+    <link href="~/css/style.css" type="text/css" rel="stylesheet">
+    <link href="~/lib/perfect-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet">
+    <link href="~/lib/materialdesignicons/material-icons.css" type="text/css" rel="stylesheet">
+
+    @RenderSection("CssImports", required: false)
+</head>
+<body>
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+
+    @RenderBody()
+
+    <script type="text/javascript" src="~/lib/jquery/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="~/lib/materialize/js/materialize.js"></script>
+    <script type="text/javascript" src="~/lib/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script type="text/javascript" src="~/js/plugins.js"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
+

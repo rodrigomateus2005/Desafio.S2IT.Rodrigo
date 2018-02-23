@@ -1,0 +1,1 @@
+Para acessar o sistema é necessário informar o ususário e senha (admin , 123456).

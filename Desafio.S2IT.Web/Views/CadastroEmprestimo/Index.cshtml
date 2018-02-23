@@ -1,0 +1,81 @@
+﻿
+@model Desafio.S2IT.Web.Models.CadastroEmprestimoModel
+@{
+    ViewData["Title"] = "Cadastro de Emprestimo";
+}
+<div class="row">
+    <div class="card-panel">
+        <h4 class="header2">
+            <b>Cadastro</b>
+
+            @if (Model == null || Model.Id <= 0)
+            {
+                <span>Novo</span>
+            }
+            else
+            {
+                @Model.Id
+            }
+
+        </h4>
+        <div class="row">
+            <form class="col s12" asp-action="Salvar" asp-controller="CadastroEmprestimo">
+                <input asp-for="Id" type="hidden">
+
+                <div class="input-field col s12 l6">
+                    <select asp-for="Amigo">
+                        <option value="0" disabled selected>Escolha um Amigo</option>
+                        @foreach (var entidade in Model.Amigos)
+                        {
+                            <option value="@entidade.Id">@entidade.Nome</option>
+                        }
+                    </select>
+                    <label asp-for="Amigo">Amigo</label>
+                </div>
+
+                <div class="input-field col s12 l6">
+                    <select asp-for="Jogo">
+                        <option value="0" disabled selected>Escolha um Amigo</option>
+                        @foreach (var entidade in Model.JogosDisponiveis)
+                        {
+                            <option value="@entidade.Id">@entidade.Nome</option>
+                        }
+                    </select>
+                    <label asp-for="Jogo">Jogo</label>
+                </div>
+                <div class="row">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <button class="btn cyan waves-effect waves-light right" type="submit" name="action" id="Gravar">
+                                Gravar
+                                <i class="material-icons right">send</i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts{
+    <script>
+        $("#Gravar").click(function (event) {
+            var amigo = parseInt($("#Amigo").val());
+            var jogo = parseInt($("#Jogo").val());
+
+            if (isNaN(amigo) || amigo <= 0) {
+                Materialize.toast('Informe um amigo!', 4000);
+                event.preventDefault();
+                return;
+            }
+
+            if (isNaN(jogo) || jogo <= 0) {
+                Materialize.toast('Informe um jogo!', 4000);
+                event.preventDefault();
+                return;
+            }
+        })
+    </script>
+}

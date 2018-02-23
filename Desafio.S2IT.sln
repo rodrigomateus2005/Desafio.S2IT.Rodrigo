@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2009
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desafio.S2IT.Data", "Desafio.S2IT.Data\Desafio.S2IT.Data.csproj", "{233A78D9-20AC-4198-9828-B734D7CB5F81}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desafio.S2IT.Web", "Desafio.S2IT.Web\Desafio.S2IT.Web.csproj", "{51393893-3EF6-4F64-9A72-A6133678ED92}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{233A78D9-20AC-4198-9828-B734D7CB5F81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{233A78D9-20AC-4198-9828-B734D7CB5F81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{233A78D9-20AC-4198-9828-B734D7CB5F81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{233A78D9-20AC-4198-9828-B734D7CB5F81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51393893-3EF6-4F64-9A72-A6133678ED92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51393893-3EF6-4F64-9A72-A6133678ED92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51393893-3EF6-4F64-9A72-A6133678ED92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51393893-3EF6-4F64-9A72-A6133678ED92}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8D4ADFFD-911B-4AF7-96D3-3B5B1EAED551}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,93 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+<header id="header" class="page-topbar">
+    <!-- start header nav-->
+    <div class="navbar-fixed">
+        <nav class="navbar-color">
+            <div class="nav-wrapper">
+                <ul class="left">
+                    <li>
+                        <h1 class="logo-wrapper">
+                            <a asp-controller="Home" asp-action="Index" class="brand-logo darken-1">
+                                <span class="logo-text hide-on-med-and-down">Gerenciador de Jogos</span>
+                            </a>
+                        </h1>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<div id="main">
+    <div class="wrapper">
+        <aside id="left-sidebar-nav">
+            <ul id="slide-out" class="side-nav fixed leftside-navigation">
+                <li class="no-padding">
+                    <ul class="collapsible" data-collapsible="accordion">
+                        <li class="bold">
+                            <a asp-controller="CadastroJogo" asp-action="Index" class="waves-effect waves-cyan">
+                                <i class="material-icons">videogame_asset</i>
+                                <span class="nav-text">Cadastro de Jogo</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="no-padding">
+                    <ul class="collapsible" data-collapsible="accordion">
+                        <li class="bold">
+                            <a asp-controller="CadastroAmigo" asp-action="Index" class="waves-effect waves-cyan">
+                                <i class="material-icons">account_circle</i>
+                                <span class="nav-text">Cadastro de Amigo</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="no-padding">
+                    <ul class="collapsible" data-collapsible="accordion">
+                        <li class="bold">
+                            <a asp-controller="CadastroEmprestimo" asp-action="Index" class="waves-effect waves-cyan">
+                                <i class="material-icons">swap_horiz</i>
+                                <span class="nav-text">Cadastro de Emprestimo</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <a href="#" data-activates="slide-out" class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only">
+                <i class="material-icons">menu</i>
+            </a>
+        </aside>
+
+        <section id="content">
+            <div id="breadcrumbs-wrapper">
+                <div class="container">
+                    <div class="row">
+                        <div class="col s10 m6 l6">
+                            <h5 class="breadcrumbs-title">@ViewData["Title"]</h5>
+                            <ol class="breadcrumbs">
+                                @*<li><a href="index.html">Dashboard</a></li>
+                                <li><a href="#">Pages</a></li>
+                                <li class="active">Blank Page</li>*@
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="section">
+                    @RenderBody()
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<footer class="page-footer"></footer>
+
+@section Scripts{
+    @RenderSection("Scripts", required: false)
+}
